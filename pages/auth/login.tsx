@@ -17,6 +17,7 @@ import Logo from '@/_global/components/Logo';
 import Image from '@/_global/components/Image';
 // sections
 import { LoginForm } from '@/_global/sections/auth/login';
+import ModuleSwapComponent from '@/_global/components/ModuleSwapComponent';
 
 // ----------------------------------------------------------------------
 
@@ -73,6 +74,7 @@ export default function Login() {
   return (
     <GuestGuard>
       <Page title="Login">
+        <ModuleSwapComponent />
         <RootStyle>
           <HeaderStyle>
             <Logo />
@@ -105,7 +107,7 @@ export default function Login() {
               <Stack direction="row" alignItems="center" sx={{ mb: 5 }}>
                 <Box sx={{ flexGrow: 1 }}>
                   <Typography variant="h4" gutterBottom>
-                    Sign in to SofttealIOT
+                    Sign in to Softteal
                   </Typography>
                   <Typography sx={{ color: 'text.secondary' }}>
                     Enter your details below.

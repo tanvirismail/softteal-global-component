@@ -174,7 +174,7 @@ function AuthProvider({ children }: AuthProviderProps) {
     });
     const { access_token, user, manage_business } = response.data.data;
 
-    localStorage.setItem('accessToken', access_token);
+    setSession(access_token);
 
     dispatch({
       type: Types.Register,
@@ -187,7 +187,9 @@ function AuthProvider({ children }: AuthProviderProps) {
 
   const logout = async () => {
     setSession(null);
-    dispatch({ type: Types.Logout });
+    setTimeout(() => {
+      dispatch({ type: Types.Logout });
+    }, 1000);
   };
 
   const forgetPassword = async (email: string) => {
