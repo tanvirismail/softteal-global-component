@@ -98,6 +98,7 @@ type AuthProviderProps = {
 
 function AuthProvider({ children }: AuthProviderProps) {
   const [state, dispatch] = useReducer(JWTReducer, initialState);
+  const authserverAPI = process.env.AUTHSERVER_API_HOST
 
   useEffect(() => {
     const initialize = async () => {
@@ -186,7 +187,7 @@ function AuthProvider({ children }: AuthProviderProps) {
   };
 
   const logout = async () => {
-    const response = await axios.get('/api/logout');
+    const response = await axios.get(authserverAPI+'/api/logout');
     if(response.status == 200) {
       setSession(null);
       setTimeout(() => {
