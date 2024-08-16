@@ -19,6 +19,16 @@ export default function AuthGuard({ children }: Props) {
   const { pathname, push } = useRouter();
 
   const [requestedLocation, setRequestedLocation] = useState<string | null>(null);
+  const [host, setHost] = useState<string | null>(null);
+
+  useEffect(() => {
+    const host = window.location.host;
+    setHost(host + (process.env.PUBLIC_BASEPATH || ''));  
+  },[]);
+
+  const redirectToExternalDomain = (url:string) => {
+    window.location.replace(url);
+  };
 
   useEffect(() => {
     if (requestedLocation && pathname !== requestedLocation) {
@@ -37,7 +47,13 @@ export default function AuthGuard({ children }: Props) {
     if (pathname !== requestedLocation) {
       setRequestedLocation(pathname);
     }
-    return <Login />;
+    if (process.env.AUTHSERVER_HOST && host !== process.env.AUTHSERVER_HOST) {
+      // redirect to authserver login route
+      redirectToExternalDomain(process.env.AUTHSERVER_HOST + '/auth/login')
+      return <></>
+    } else {
+      return <Login />;
+    }
   }
 
   return <>{children}</>;

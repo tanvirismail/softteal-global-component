@@ -186,10 +186,13 @@ function AuthProvider({ children }: AuthProviderProps) {
   };
 
   const logout = async () => {
-    setSession(null);
-    setTimeout(() => {
-      dispatch({ type: Types.Logout });
-    }, 1000);
+    const response = await axios.get('/api/logout');
+    if(response.status == 200) {
+      setSession(null);
+      setTimeout(() => {
+        dispatch({ type: Types.Logout });
+      }, 1000);
+    }
   };
 
   const forgetPassword = async (email: string) => {
