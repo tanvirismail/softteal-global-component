@@ -35,7 +35,7 @@ export default function NavbarOrganization({ isCollapse }: Props) {
   const businessName = manageBusiness?.business?.name || "My Business";
 
   return (
-    <NextLink href={PATH_BUSINESS.general} passHref>
+    <NextLink href={process.env.AUTHSERVER_HOST + '/business/general'} passHref>
       <Link underline="none" color="inherit">
         <RootStyle
           sx={{
