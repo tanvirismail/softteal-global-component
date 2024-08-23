@@ -12,7 +12,7 @@ import Scrollbar from '@/_global/components/Scrollbar';
 import MenuPopover from '@/_global/components/MenuPopover';
 import BadgeStatus from '@/_global/components/BadgeStatus';
 import { IconButtonAnimate } from '@/_global/components/animate';
-import { getManageBusinesses, switchBusiness } from '@/api/user';
+import { getManageBusinesses, switchBusiness } from '@/_global/api/business';
 import useAuth from '@/_global/hooks/useAuth';
 import { useRouter } from 'next/router';
 
@@ -80,7 +80,7 @@ export default function OrganizationSwitchPopover() {
             }),
           }}
         >
-          <Iconify icon={'eva:toggle-right-fill'} width={20} height={20} />
+          <Iconify icon={'eva:swap-fill'} width={20} height={20} />
         </IconButtonAnimate>
         <MenuPopover
           open={Boolean(open)}

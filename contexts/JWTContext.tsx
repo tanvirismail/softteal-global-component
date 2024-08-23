@@ -109,7 +109,7 @@ function AuthProvider({ children }: AuthProviderProps) {
         if (accessToken && isValidToken(accessToken)) {
           setSession(accessToken);
 
-          const response = await axios.get('/api/auth/user');
+          const response = await axios.get(authserverAPI+'/api/auth/user');
           const data = response.data.data;
           const user = data.user;
           const manageBusiness = data.manage_business;

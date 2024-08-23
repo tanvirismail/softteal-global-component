@@ -21,7 +21,7 @@ import { IconButtonAnimate } from '@/_global/components/animate';
 const MENU_OPTIONS = [
   {
     label: 'Profile',
-    linkTo: PATH_PROFILE.index,
+    linkTo: process.env.AUTHSERVER_HOST + '/profile',
   },
 ];
 
