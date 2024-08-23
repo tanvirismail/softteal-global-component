@@ -1,11 +1,11 @@
 import { AxiosResponse } from "axios";
 import axios from "@/_global/utils/axios";
 
-const apiHostPrefix = process.env.API_HOST_PREFIX;
+const apiHost = process.env.AUTHSERVER_API_HOST;
 
 const ENDPOINT = {
-    BUSINESS_USER_MANAGE: `${apiHostPrefix}/business-user/manage`,
-    BUSINESS_USER_SWITCH: `${apiHostPrefix}/business-user/switch`,
+    BUSINESS_USER_MANAGE: `${apiHost}/api/business-user/manage`,
+    BUSINESS_USER_SWITCH: `${apiHost}/api/business-user/switch`,
 }
 
 export function getManageBusinesses() {
