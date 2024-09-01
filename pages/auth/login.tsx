@@ -17,7 +17,6 @@ import Logo from '@/_global/components/Logo';
 import Image from '@/_global/components/Image';
 // sections
 import { LoginForm } from '@/_global/sections/auth/login';
-import ModuleSwapComponent from '@/_global/components/ModuleSwapComponent';
 
 // ----------------------------------------------------------------------
 
@@ -74,7 +73,6 @@ export default function Login() {
   return (
     <GuestGuard>
       <Page title="Login">
-        <ModuleSwapComponent />
         <RootStyle>
           <HeaderStyle>
             <Logo />

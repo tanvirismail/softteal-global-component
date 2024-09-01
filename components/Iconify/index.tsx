@@ -6,7 +6,7 @@ import FluentIcon from './fluent';
 import EvaIcon from './eva';
 import SolarIcon from './solar';
 import RIIcons from './ri';
-import BXIcons from './bx';
+import BoxIcons from './bx';
 import LucideIcons from './lucide';
 import UimIcons from './uim';
 import FAIcons from './fa';
@@ -16,6 +16,7 @@ import CarbonIcons from './carbon';
 import TablerIcons from './tabler';
 import Fa6solidIcons from './fa6-solid';
 import AntDesignIcons from './ant-design';
+import MaterialDesignIcons from './mdi';
 
 // ----------------------------------------------------------------------
 
@@ -24,7 +25,7 @@ export const IconList:any = {
     solar: SolarIcon,
     fluent: FluentIcon,
     ri: RIIcons,
-    bx: BXIcons,
+    bx: BoxIcons,
     lucide: LucideIcons,
     uim: UimIcons,
     fa: FAIcons,
@@ -34,6 +35,7 @@ export const IconList:any = {
     tabler: TablerIcons,
     'fa6-solid': Fa6solidIcons,
     'ant-design': AntDesignIcons,
+    mdi: MaterialDesignIcons,
 };
 
 let IconNames:any = [];

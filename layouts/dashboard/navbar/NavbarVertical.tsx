@@ -56,6 +56,8 @@ export default function NavbarVertical({ isOpenSidebar, onCloseSidebar }: Props)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
+  const navConfigData = navConfig();
+
   const renderContent = (
     <Scrollbar
       sx={{
@@ -84,7 +86,7 @@ export default function NavbarVertical({ isOpenSidebar, onCloseSidebar }: Props)
         <NavbarOrganization isCollapse={isCollapse} />
       </Stack>
 
-      <NavSectionVertical navConfig={navConfig} isCollapse={isCollapse} />
+      <NavSectionVertical navConfig={navConfigData} isCollapse={isCollapse} />
 
       <Box sx={{ flexGrow: 1 }} />
 

@@ -18,7 +18,6 @@ import AccountPopover from './AccountPopover';
 import LanguagePopover from './LanguagePopover';
 import OrganizationSwitchPopover from './OrganizationSwitchPopover';
 import NotificationsPopover from './NotificationsPopover';
-import ModuleSwapComponent from '@/_global/components/ModuleSwapComponent';
 // ----------------------------------------------------------------------
 
 type RootStyleProps = {
@@ -74,7 +73,6 @@ export default function DashboardHeader({
 
   return (
     <RootStyle isCollapse={isCollapse} isOffset={isOffset} verticalLayout={verticalLayout}>
-      <ModuleSwapComponent /> 
       <Toolbar
         sx={{
           minHeight: '100% !important',

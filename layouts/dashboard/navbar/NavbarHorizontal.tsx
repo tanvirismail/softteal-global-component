@@ -28,10 +28,11 @@ const RootStyle = styled(AppBar)(({ theme }) => ({
 // ----------------------------------------------------------------------
 
 function NavbarHorizontal() {
+  const navConfigData = navConfig();
   return (
     <RootStyle>
       <Container maxWidth={false}>
-        <NavSectionHorizontal navConfig={navConfig} />
+        <NavSectionHorizontal navConfig={navConfigData} />
       </Container>
     </RootStyle>
   );
